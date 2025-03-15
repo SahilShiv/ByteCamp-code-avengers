@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/src/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="/src/waste.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      </style>
+
+      <style>
+        input{
+          cursor: pointer;
+        }
+
+        #donors_foodlistings{
+          overflow-y: auto;
+          overflow-x: auto;
+        }
+      </style>
+
+    <title>Smart Waste Management</title>
+</head>
+<body>
+    <nav class="h-32 w-full p-6 bg-[#e7e0d2] flex items-center align-middle">
+        <a href="index.html">
+            <div class="h-32 w-36 bg-[url('/FoodLink_Final_Logo.png')] bg-cover bg-center"></div>
+          </a>
+    
+          <a href="index.html">
+            <div class="h-32 w-[350px] text-4xl flex ml-5 items-center text-orange-500 font-bold">
+              <p>Eco</p>
+              <p class="text-green-600">Sync</p>
+            </div>
+          </a>
+        
+          <div id="navtabs_container" class="flex ml-[600px] align-middle gap-7 font-medium  text-[22px] list-none">
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Home</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="waste.html">Waste</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="flood.html">Flood</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="electricity.html">Electricity</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Login</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Register</a></li>
+        </div>
+      </nav>
+
+    <div id="section1" class="h-[1100px] w-full flex pl-2 pr-2">
+        <div id="user_section" class="h-full w-[25%]">
+            <h1 class="text-black font-[Poppins] text-[28px] font-semibold ml-5 mt-4">Hello, Username</h1>
+            <div id="donors_filterlist" class="h-[922px] mt-5 items-start flex flex-col gap-5 pl-10 pt-5 bg-red-50">
+
+                <a href=""><h3 class="font-[Poppins] mt-3 text-yellow-800 text-2xl font-bold">Your Profile</h3></a>
+                <a href=""><h3 class="font-[Poppins] mt-3 text-yellow-800 text-2xl font-bold">Points</h3></a>
+            </div>
+        </div>
+        
+        <div id="donors_listings" class="h-[1000px] w-[75%] flex flex-col bg-emerald-50">
+            <div id="donors_searchdiv" class="h-20 w-full p-2 bg-white">
+              <form action="" class="flex items-center">
+              </form>
+            </div>
+
+            <div id="donors_foodlistings" class="h-[1100px] w-[1440px] flex flex-col p-5 overflow-y-auto">
+
+              <!-- <div class="listing min-h-96 w-[1300px] mt-4 ml-[2%] p-5 rounded-3xl border-2 border-transparent hover:border-black bg-cyan-100 shadow-2xl shadow-gray-300 hover:shadow-2xl hover:shadow-black text-xl cursor-pointer"> -->
+              <!-- Left Side: Image Preview & Upload Button -->
+<!-- Main Flex Container -->
+<div class="flex flex-row items-center gap-6">
+    
+    <!-- Left Side: Image Preview & Upload Button -->
+    <div class="flex flex-col ml-[30%] items-center">
+        <!-- Image Preview -->
+        <div id="imagePreview" class="h-64 w-64 bg-gray-200 rounded-lg flex items-center justify-center mb-4 overflow-hidden">
+            <span class="text-gray-500" id="previewText">No image selected</span>
+        </div>
+
+        <!-- Hidden File Input -->
+        <input type="file" id="fileInput" accept="image/*" class="hidden">
+
+        <!-- Upload Button -->
+        <button onclick="document.getElementById('fileInput').click()"
+            class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
+            Upload Waste Image
+        </button>
+      </div>
+</div>
+
+                
+                
+            </div>
+        </div>
+    </div>
+    <footer class="h-52 w-full bg-gray-800"></footer>
+</body>
+</html>
